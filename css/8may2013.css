@@ -1,0 +1,801 @@
+
+@import "http://fonts.googleapis.com/css?family=Julius+Sans+One|Libre+Baskerville:400,400italic";
+* {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: none repeat scroll 0 0 #fff;
+    color: #325050;
+    font-family: "Libre Baskerville",sans-serif;
+    font-size: 70%;
+}
+a {
+    color: #0d8ba1;
+    text-decoration: none;
+    transition: all 0.25s ease-out 0s;
+}
+a:visited {
+    color: #1a5952;
+}
+a:hover, a:focus {
+    color: #0599c2;
+    text-decoration: underline;
+}
+abbr {
+    border: medium none;
+    font-size: 0.9em;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+}
+header {
+    background-attachment: fixed, fixed, fixed, scroll;
+    background-clip: border-box;
+    background-color: #2d6360;
+    background-image: url("../img/contours.png"), url("../img/noise.png"), url("../img/gridlines.png"), url("../img/huntington.jpg");
+    background-origin: padding-box;
+    background-position: 0 0px, 0 0px, -5px -25px, 0 50%;
+    background-repeat: repeat, repeat, repeat, no-repeat;
+    background-size: auto auto, auto auto, auto auto, cover;
+    height: 230px;
+    padding: 20px 0 70px;
+    text-align: center;
+}
+h1, h2 {
+    color: #fff;
+    font-weight: normal;
+    margin: 0;
+    padding: 0 10%;
+}
+h1 {
+    border-bottom: medium none;
+    font-family: "Julius Sans One",sans-serif;
+    font-size: 3.2em;
+    padding-bottom: 5px;
+    padding-top: 0;
+    text-transform: uppercase;
+}
+h1:before {
+    background: url("/img/enso.svg") no-repeat scroll 0 0 / 100% auto rgba(0, 0, 0, 0);
+    content: "";
+    display: inline-block;
+    height: 80px;
+    margin: -20px 20px 0 0;
+    opacity: 0.6;
+    position: relative;
+    top: 20px;
+    width: 80px;
+}
+h2 {
+    border-top: medium none;
+    color: rgba(255, 255, 255, 0.6);
+    display: block;
+    font-size: 1.6em;
+    font-style: italic;
+    padding-bottom: 30px;
+    padding-top: 5px;
+}
+h2:before {
+    content: " ";
+    padding: 50px;
+}
+h3 {
+    color: #2e484c;
+    font-family: "Julius Sans One",sans-serif;
+    font-size: 1.8em;
+    font-weight: normal;
+    margin: 2em 0 0;
+    text-transform: uppercase;
+}
+p {
+    line-height: 2;
+    margin: 0.75em 0;
+}
+.page-wrapper {
+    position: relative;
+}
+.summary, .preamble {
+    margin: 0 auto;
+    width: 80%;
+}
+.supporting h3, .supporting p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+.summary {
+    padding-top: 2em;
+}
+.intro a, .intro a:visited {
+    border-radius: 1px;
+    color: #809b7e;
+    display: inline-block;
+    font-family: "Julius Sans One",sans-serif;
+    margin: -1px -10px -1px -6px;
+    padding: 1px 10px 1px 32px;
+    position: relative;
+    text-transform: uppercase;
+}
+.intro a:hover, .intro a:focus {
+    background: none repeat scroll 0 0 #3d8a9f;
+    color: #fff;
+    text-decoration: none;
+    z-index: 2;
+}
+.intro a:before {
+    background: none repeat scroll 0 0 #d9e1cd;
+    color: #a9b995;
+    content: "D";
+    display: inline-block;
+    font-family: "verdemoderna";
+    font-size: 16px;
+    font-variant: normal;
+    font-weight: normal;
+    left: 8px;
+    line-height: 1;
+    padding: 2px;
+    position: absolute;
+    text-indent: 0;
+    text-transform: none;
+    top: 6px;
+    transition: all 0.25s ease-out 0s;
+}
+.intro a:hover:before {
+    background: none repeat scroll 0 0 #357d93;
+    color: #fff;
+}
+div.participation, div.benefits {
+    background-attachment: scroll, scroll, fixed;
+    background-color: rgba(138, 188, 159, 0.5);
+    background-image: url("contours-opaque.png"), url("gridlines-opaque.png"), url("bamboo.png");
+    background-repeat: repeat, repeat, no-repeat;
+    background-size: auto auto, auto auto, cover;
+}
+div.participation {
+    margin-top: 3em;
+    padding: 3em 0;
+}
+div.benefits {
+    margin-bottom: 3em;
+    padding-bottom: 3em;
+}
+div.participation h3, div.benefits h3 {
+    margin-top: 0;
+}
+div.participation p, div.benefits p {
+    margin-bottom: 0;
+}
+.sidebar {
+    background: none repeat scroll 0 0 #edf4f0;
+}
+.sidebar h3 {
+    display: none;
+}
+.sidebar a {
+    color: #607476;
+    text-decoration: none;
+}
+.sidebar a:hover, .sidebar a:focus {
+    color: #49968e;
+}
+.sidebar ul {
+    list-style: none outside none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+.design-selection ul, .zen-resources ul {
+    margin: 0;
+}
+.design-selection li, .zen-resources li {
+    border-top: 1px solid #d9e3dc;
+    color: #c0cac3;
+    float: left;
+    font-style: italic;
+    padding: 1.5em 10%;
+    width: 50%;
+}
+.design-selection li:hover, .design-selection li:focus {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.design-selection li:nth-child(2n+1), .zen-resources li:nth-child(2n+1) {
+    clear: left;
+}
+.design-selection .design-name, .zen-resources a, li.viewall a {
+    display: block;
+    font-family: "Julius Sans One",sans-serif;
+    font-size: 1.2em;
+    font-style: normal;
+    margin-bottom: 0.25em;
+    text-transform: uppercase;
+}
+.design-selection h3 {
+    display: none;
+}
+.design-selection .designer-name {
+    color: #616857;
+    font-size: 0.9em;
+    font-style: normal;
+}
+.design-archives {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.2);
+    height: 70px;
+    position: absolute;
+    right: 0;
+    top: 160px;
+    width: 100%;
+}
+.design-archives h3 {
+    display: none;
+}
+.design-archives ul {
+    margin: 0;
+}
+.design-archives li {
+    border: medium none;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+}
+.design-archives li.viewall {
+    left: 0;
+    line-height: 50px;
+    padding: 0 71px;
+    top: 0;
+    width: 100%;
+}
+.previous, .next {
+    left: 0;
+    z-index: 3;
+}
+.next {
+    left: auto;
+    right: 0;
+}
+.design-archives a, .design-archives a:visited {
+    color: rgba(255, 255, 255, 0.65);
+}
+.design-archives a:hover, .design-archives a:focus {
+    color: #fff;
+}
+.design-archives .previous a, .design-archives .next a {
+    display: block;
+    height: 70px;
+    overflow: hidden;
+    text-decoration: none;
+    text-indent: 100%;
+    white-space: nowrap;
+    width: 70px;
+}
+.design-archives .viewall a {
+    min-height: 70px;
+    padding: 12px 0 0;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+}
+.design-archives a:before {
+    font-family: "verdemoderna";
+    font-size: 44px;
+    font-variant: normal;
+    font-weight: normal;
+    height: 70px;
+    left: 0;
+    line-height: 70px;
+    position: absolute;
+    text-align: center;
+    text-indent: 0;
+    text-transform: none;
+    width: 70px;
+}
+.design-archives .viewall a:hover, .design-archives .viewall a:focus, .design-archives .viewall a:active, .design-archives a:hover:before, .design-archives a:focus:before, .design-archives a:active:before {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1) inset;
+}
+.design-archives .previous a:before {
+    content: "<";
+}
+.design-archives .next a:before {
+    content: ">";
+}
+.zen-resources {
+    background-color: rgba(138, 188, 159, 0.5);
+    background-image: url("bamboo.png");
+    overflow: hidden;
+}
+.zen-resources li {
+    border-top: 1px solid #a0b9ad;
+    font-style: normal;
+}
+.zen-resources li:last-child {
+    border-bottom: 1px solid #a0b9ad;
+    float: none;
+    width: auto;
+}
+.requirements p:nth-child(5) {
+    padding-bottom: 2em;
+}
+.supporting .requirements {
+    clear: both;
+    float: none;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+.supporting .requirements a {
+    text-decoration: none;
+}
+.supporting .requirements a:hover, .supporting .requirements a:focus {
+    text-decoration: underline;
+}
+.supporting .requirements h3 {
+    padding-top: 0;
+}
+.requirements p:last-child {
+    background-attachment: fixed, fixed, fixed, scroll;
+    background-clip: border-box;
+    background-color: #3e5d67;
+    background-image: url("contours.png"), url("gridlines.png"), url("noise.png"), url("koi.jpg");
+    background-origin: padding-box;
+    background-position: 0 0px, -5px -25px, 0 0px, 0 50%;
+    background-repeat: repeat, repeat, repeat, no-repeat;
+    background-size: auto auto, auto auto, auto auto, cover;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 2em;
+    font-style: italic;
+    margin: 0;
+    padding: 1em 12%;
+    text-align: center;
+    width: auto;
+}
+.requirements p:last-child a {
+    color: rgba(255, 255, 255, 0.7);
+    font-style: normal;
+}
+footer {
+    background: none repeat scroll 0 0 #134347;
+    clear: both;
+    color: #fff;
+    padding: 3em 10%;
+    text-align: center;
+}
+footer a {
+    color: rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    height: 40px;
+    margin: 0 0.5em;
+    overflow: hidden;
+    padding: 40px 0 0;
+    position: relative;
+    transition: color 0.25s ease-out 0s, box-shadow 0.25s ease-out 0s;
+    width: 40px;
+}
+footer a:hover, footer a:focus {
+    color: rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+}
+footer a:visited {
+    color: rgba(255, 255, 255, 0.2);
+}
+footer a:before {
+    display: block;
+    font-family: "verdemoderna";
+    font-size: 36px;
+    font-variant: normal;
+    font-weight: normal;
+    left: 0;
+    line-height: 1;
+    overflow: visible;
+    position: absolute;
+    text-indent: 0;
+    text-transform: none;
+    top: 3px;
+}
+footer a.zen-validate-html:before {
+    content: "5";
+}
+footer a.zen-validate-html:hover:before, footer a.zen-validate-html:focus:before {
+    content: "%";
+}
+footer a.zen-validate-css:before {
+    content: "3";
+}
+footer a.zen-validate-css:hover:before, footer a.zen-validate-css:focus:before {
+    content: "#";
+}
+footer a.zen-license:before {
+    content: "c";
+}
+footer a.zen-license:hover:before, footer a.zen-license:focus:before {
+    content: "C";
+}
+footer a.zen-accessibility:before {
+    content: "a";
+}
+footer a.zen-accessibility:hover:before, footer a.zen-accessibility:focus:before {
+    content: "A";
+}
+footer a.zen-github:before {
+    content: "g";
+}
+footer a.zen-github:hover:before, footer a.zen-github:focus:before {
+    content: "G";
+}
+@media only screen and (max-width: 600px) {
+.summary p:last-child {
+    display: none;
+}
+h1 {
+    font-size: 2.5em;
+    margin-top: 30px;
+}
+h1:before {
+    height: 50px;
+    width: 50px;
+}
+h2:before {
+    padding: 25px;
+}
+.requirements p:last-child {
+    padding: 1em 6%;
+}
+}
+@media only screen and (max-width: 500px) {
+header {
+    height: 250px;
+    padding-top: 0;
+}
+h1 {
+    margin: 0;
+}
+h1:before {
+    display: block;
+    height: 50px;
+    left: 50%;
+    margin: 0 0 0 -25px;
+    padding: 0 0 35px;
+    width: 50px;
+}
+h2:before {
+    padding: 0;
+}
+.design-archives {
+    top: 180px;
+}
+.design-selection li, .zen-resources li {
+    padding: 1em 5%;
+}
+footer a {
+    margin: 0 0.5em;
+}
+}
+@media only screen and (max-width: 320px) {
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.3em;
+}
+.design-selection li, .zen-resources li {
+    float: none;
+    width: 100%;
+}
+.requirements p:last-child {
+    font-size: 1.4em;
+}
+footer {
+    padding: 2em 5%;
+}
+footer a {
+    height: 35px;
+    margin: 0 0.5em;
+    padding: 35px 0 0;
+    width: 35px;
+}
+footer a:before {
+    font-size: 32px;
+}
+}
+@media only screen and (max-width: 1132px) {
+header {
+    border-top: 10px solid rgba(19, 67, 71, 0.9);
+}
+p, li {
+    font-size: 1.2em;
+}
+}
+@media only screen and (min-width: 500px) and (max-width: 1150px) {
+.requirements p:last-child {
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+footer {
+    padding: 3em 0;
+}
+footer a {
+    height: 52px;
+    margin: 0 2em;
+    padding: 52px 0 0;
+    width: 52px;
+}
+footer a:before {
+    font-size: 48px;
+}
+}
+@media only screen and (min-width: 1132px) {
+body {
+    background: linear-gradient(to right, #ffffff 0%, #ffffff 66%, #e5ede8 66%, #e5ede8 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    font-size: 100%;
+}
+header {
+    border-top: 12px solid rgba(19, 67, 71, 0.8);
+    box-shadow: 0 0 100px rgba(255, 255, 255, 0.3) inset;
+    height: 310px;
+    padding: 0 10%;
+    text-align: left;
+    vertical-align: middle;
+    width: 100%;
+}
+header:before, header:after {
+    background: none repeat scroll 0 0 rgba(0, 39, 43, 0.2);
+    content: " ";
+    display: block;
+    height: 7px;
+    left: 0;
+    position: absolute;
+    top: 9px;
+    width: 100%;
+    z-index: 3;
+}
+header:after {
+    background: none repeat scroll 0 0 rgba(0, 39, 43, 0.075);
+    height: 4px;
+    top: 306px;
+}
+h1 {
+    display: inline-block;
+    margin: 15px 0 0;
+    padding: 60px 0 5px;
+    position: relative;
+}
+h1:before {
+    animation: 36000s ease 0s alternate none infinite koan;
+    background: url("enso.svg") repeat scroll 0 0 / 100% auto rgba(0, 0, 0, 0);
+    content: "";
+    display: inline-block;
+    height: 125px;
+    margin: -65px 40px 0 0;
+    opacity: 0.6;
+    position: relative;
+    top: 65px;
+    width: 125px;
+}
+h2 {
+    display: block;
+    margin: 0;
+    padding: 5px 0 60px 70px;
+}
+p {
+    font-size: 1em;
+}
+nav, .supporting {
+    display: inline;
+}
+.summary, .preamble, .supporting div, .requirements h3, .requirements p {
+    clear: left;
+    float: left;
+    padding: 1em 5% 1em 10%;
+    width: 66%;
+}
+.explanation h3, .explanation p, .participation h3, .participation p, .benefits h3, .benefits p {
+    width: 100%;
+}
+.summary {
+    padding-top: 3.25em;
+}
+.requirements h3, .requirements p {
+    margin: 0;
+    padding-bottom: 0;
+}
+div.participation, div.benefits {
+    margin: 0;
+    padding-left: 10%;
+    padding-right: 38%;
+    width: 100%;
+}
+div.participation, div.requirements {
+    padding-top: 4em;
+}
+div.explanation, div.benefits {
+    padding-bottom: 4em;
+}
+.requirements p:nth-child(5) {
+    padding-bottom: 4em;
+}
+.intro h3, .supporting h3 {
+    margin-top: 0;
+}
+.intro p:last-child, .supporting p:last-child {
+    margin-bottom: 0;
+}
+.requirements p:last-child {
+    box-shadow: 0 0 100px rgba(255, 255, 255, 0.3) inset;
+    padding-bottom: 3em;
+    padding-top: 3em;
+}
+.design-selection, .zen-resources {
+    background: none repeat scroll 0 0 transparent;
+    margin: 0;
+    overflow: visible;
+    padding: 0 0 20px;
+    position: absolute;
+    right: 0;
+    top: 360px;
+    width: 33.3%;
+}
+.sidebar li {
+    float: none;
+    margin: 0 29.4% 0 14.7%;
+    padding-left: 0;
+    padding-right: 0;
+    width: auto;
+}
+.design-selection li:first-child {
+    border-top: 0 none;
+}
+.design-selection li:hover, .design-selection li:focus {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.design-archives {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 66%, rgba(33, 84, 95, 0.3) 66%, rgba(33, 84, 95, 0) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 310px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+.design-archives nav {
+    display: block;
+    position: absolute;
+    right: 1%;
+    top: 120px;
+    width: 32%;
+}
+.design-archives li {
+    margin: 0;
+}
+.design-archives .viewall a, .design-archives a:before {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+}
+.design-archives .viewall a:hover, .design-archives a:hover:before {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.zen-resources {
+    background: none repeat scroll 0 0 transparent;
+    position: absolute;
+    right: 0;
+    top: 1310px;
+    width: 34%;
+}
+.zen-resources h3 {
+    display: none;
+}
+.zen-resources ul {
+    margin: 0 29.4% 0 14.7%;
+    width: 55.9%;
+}
+.zen-resources li {
+    margin: 0;
+    padding: 1.5em 0 1.25em;
+}
+}
+@media only screen and (min-width: 1150px) {
+footer a {
+    height: 76px;
+    margin: 0 3em;
+    padding: 76px 0 0;
+    width: 76px;
+}
+footer a:before {
+    font-size: 72px;
+}
+}
+@media only screen and (min-width: 1120px) {
+.zen-resources {
+    top: 1490px;
+}
+}
+@media only screen and (min-width: 1240px) {
+.zen-resources {
+    top: 1460px;
+}
+}
+@media only screen and (min-width: 1260px) {
+.zen-resources {
+    top: 1420px;
+}
+}
+@media only screen and (min-width: 1320px) {
+.zen-resources {
+    top: 1390px;
+}
+}
+@media only screen and (min-width: 1370px) {
+.zen-resources {
+    top: 1360px;
+}
+}
+@media only screen and (min-width: 1520px) {
+.zen-resources {
+    top: 1330px;
+}
+}
+@media only screen and (min-width: 1812px) {
+.zen-resources {
+    top: 1300px;
+}
+}
+@media only screen and (min-width: 1848px) {
+.zen-resources {
+    top: 1270px;
+}
+}
+@media only screen and (min-width: 2015px) {
+.zen-resources {
+    top: 1240px;
+}
+}
+@media only screen and (min-width: 2115px) {
+.zen-resources {
+    top: 1210px;
+}
+}
+@media only screen and (min-width: 2400px) {
+}
+@keyframes koan {
+0% {
+    opacity: 1;
+    transform: scale(1);
+}
+100% {
+    opacity: 0;
+    transform: scale(3);
+}
+}
+@keyframes koan {
+0% {
+    opacity: 1;
+    transform: scale(1);
+}
+100% {
+    opacity: 0;
+    transform: scale(3);
+}
+}
+@media (min--moz-device-pixel-ratio: 1.5), not all, not all, not all, (min-resolution: 1.5dppx) {
+header {
+    background-image: url("contours@2x.png"), url("noise.png"), url("gridlines.png"), url("huntington.jpg");
+    background-size: 50% auto, auto auto, auto auto, cover;
+}
+.requirements p:last-child {
+    background-image: url("contours@2x.png"), url("gridlines.png"), url("noise.png"), url("koi.jpg");
+    background-size: 50% auto, auto auto, auto auto, cover;
+}
+.design-archives nav {
+    right: 3%;
+    width: 29%;
+}
+}
+@font-face {
+    font-family: "verdemoderna";
+    font-style: normal;
+    font-weight: normal;
+    src: url("verdemoderna.eot?#iefix") format("embedded-opentype"), url("verdemoderna.woff") format("woff"), url("verdemoderna.ttf") format("truetype"), url("verdemoderna.svg#verdemoderna") format("svg");
+}

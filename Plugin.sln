@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{28651AD5-4EFD-4310-82FE-6AEEF1373A42}"
+	ProjectSection(SolutionItems) = preProject
+		index.html = index.html
+		style.css = style.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "script", "script", "{B4FA40AE-2B18-4855-B9E6-EE677F987F19}"
+	ProjectSection(SolutionItems) = preProject
+		script\html5shiv.js = script\html5shiv.js
+		script\jquery-1.11.1.min.js = script\jquery-1.11.1.min.js
+		script\jquery-1.11.1.min.map = script\jquery-1.11.1.min.map
+		script\plugin.js = script\plugin.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{5263CAC6-8A4F-442D-A75F-BE9CCE97DEE3}"
+	ProjectSection(SolutionItems) = preProject
+		css\8may2013.css = css\8may2013.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{69054EC7-D85B-4646-AB0F-09908320C4F0}"
+	ProjectSection(SolutionItems) = preProject
+		img\enso.svg = img\enso.svg
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B4FA40AE-2B18-4855-B9E6-EE677F987F19} = {28651AD5-4EFD-4310-82FE-6AEEF1373A42}
+		{5263CAC6-8A4F-442D-A75F-BE9CCE97DEE3} = {28651AD5-4EFD-4310-82FE-6AEEF1373A42}
+		{69054EC7-D85B-4646-AB0F-09908320C4F0} = {28651AD5-4EFD-4310-82FE-6AEEF1373A42}
+	EndGlobalSection
+EndGlobal
