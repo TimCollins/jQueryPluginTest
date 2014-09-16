@@ -22,7 +22,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{5263CAC6-8A4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{69054EC7-D85B-4646-AB0F-09908320C4F0}"
 	ProjectSection(SolutionItems) = preProject
+		img\bamboo.png = img\bamboo.png
+		img\contours-opaque.png = img\contours-opaque.png
+		img\contours.png = img\contours.png
+		img\contours@2x.png = img\contours@2x.png
 		img\enso.svg = img\enso.svg
+		img\gridlines-opaque.png = img\gridlines-opaque.png
+		img\gridlines.png = img\gridlines.png
+		img\huntington.jpg = img\huntington.jpg
+		img\koi.jpg = img\koi.jpg
+		img\noise.png = img\noise.png
 	EndProjectSection
 EndProject
 Global
