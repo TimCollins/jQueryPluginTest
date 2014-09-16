@@ -1,12 +1,27 @@
 $(document).ready(function () {
-
-    // Change link colour on click.
     $("#btnChangeColour").click(function () {
-        $("a").css("color", "red");
+        // Example of chaining the output from the greenify function.
+        //$("a").greenify().addClass("greenified");
+
+        // Examples of specifying settings. Pass an anonymous object with name/value pairs
+        // that match the format of what is specified in the function.
+        // Pass just color
+        //$("a").greenify({
+        //    color: "orange"
+        //});
+
+        // Pass color and backgroundColor
+        //$("a").greenify({
+        //    color: "orange",
+        //    backgroundColor: "black"
+        //});
+
+        // Pass neither (defaults defined in the function will be used)
+        $("a").greenify();
     });
 
-    $("#btnGreenify").click(function () {
-        $("a").greenify().addClass("greenified");
+    $("#btnLocation").click(function() {
+        $("a").showLinkLocation();
     });
 
     $("#btnPopup").click(function() {
@@ -14,19 +29,22 @@ $(document).ready(function () {
     });
 });
 
-// Wrap the greenify function in an immediately-invoked function expression.
-// Declare a function with one parameter, "$", and pass it the jQuery function object.
 (function($) {
-    // Turn all links green when clicked.
-    $.fn.greenify = function () {
-        var brightGreen = "#00FF00";
-        // Can pass colour names as well as HTML colour codes.
-        //this.css("color", "green");
-        this.css("color", brightGreen);
-        console.log("Changed link colours to " + brightGreen);
+    $.fn.greenify = function (options) {
 
-        // Make the function chainable.
-        return this;
+        // Create an anonymous object with two properties - color and backgroundColor.
+        // Give the properties default values and use extend() to merge the function parameter
+        // called options into it.
+        var settings = $.extend({
+            color: "#00FF00",
+            backgroundColor: "white"
+        }, options);
+        
+        console.log("Changed link colour to " + settings.color);
+        return this.css({
+            color: settings.color,
+            backgroundColor: settings.backgroundColor
+        });
     };
 }(jQuery));
 
@@ -49,3 +67,29 @@ $(document).ready(function () {
     };
 }(jQuery));
 
+(function($) {
+    $.fn.showLinkLocation = function () {
+        // Filter reduces the set of matched elements to those that match the specified 
+        // selector. I don't think it's needed in this case since the selector that is
+        // triggering the function call is already "a".
+        //this.filter("a").each(function () {
+        //this.each(function () {
+        //    // For each element in the set of matching objects, wrap it in a jQuery object
+        //    // and save as a variable called "link".
+        //    var link = $(this);
+        //    var linkText = " (" + link.attr("href") + ")";
+
+        //    // Append the link text to the link object.
+        //    // See http://stackoverflow.com/q/280634/137001 for possible fixes to the 
+        //    // problem of repeated appends being displayed.
+        //    link.append(linkText);
+        //});
+
+        this.filter("a").append(function () {        
+            return " (" + this.href + ")";
+        });
+
+        // Return the object so that the method can be chained.
+        return this;
+    };
+}(jQuery));

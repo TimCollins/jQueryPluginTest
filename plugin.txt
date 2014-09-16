@@ -36,6 +36,9 @@ This is the greenify function wrapped in an immediately-invoked function express
     };
 }(jQuery));
 
+It is recommended to use function parameters with plugins to reduce the chance of one plugin interfering with another. I think that if the function signatures are different then even if the function names are the same, they won't upset each other.
+
+The jQuery.extend() function is used to merge the contents of two or more objects together.
 
 
 
@@ -43,9 +46,8 @@ This is the greenify function wrapped in an immediately-invoked function express
 
 
 
-
-
-
+	
+	
 
 
 
