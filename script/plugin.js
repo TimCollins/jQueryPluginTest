@@ -10,7 +10,8 @@ $(document).ready(function () {
     });
 });
 
-// Wrap the greenify function in an immediately-invoked function expression
+// Wrap the greenify function in an immediately-invoked function expression.
+// Declare a function with one parameter, "$", and pass it the jQuery function object.
 (function($) {
     // Turn all links green when clicked.
     $.fn.greenify = function () {
