@@ -73,12 +73,20 @@ $(document).ready(function () {
         // selector. I don't think it's needed in this case since the selector that is
         // triggering the function call is already "a".
         //this.filter("a").each(function () {
-        this.each(function () {
-            // For each element in the set of matching objects, wrap it in a jQuery object
-            // and save as a variable called "link".
-            var link = $(this);
-            // Append the link text to the link object.
-            link.append(" (" + link.attr("href") + ")");
+        //this.each(function () {
+        //    // For each element in the set of matching objects, wrap it in a jQuery object
+        //    // and save as a variable called "link".
+        //    var link = $(this);
+        //    var linkText = " (" + link.attr("href") + ")";
+
+        //    // Append the link text to the link object.
+        //    // See http://stackoverflow.com/q/280634/137001 for possible fixes to the 
+        //    // problem of repeated appends being displayed.
+        //    link.append(linkText);
+        //});
+
+        this.filter("a").append(function () {        
+            return " (" + this.href + ")";
         });
 
         // Return the object so that the method can be chained.
