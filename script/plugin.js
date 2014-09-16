@@ -14,29 +14,13 @@ $(document).ready(function () {
 (function($) {
     // Turn all links green when clicked.
     $.fn.greenify = function () {
+        var brightGreen = "#00FF00";
         // Can pass colour names as well as HTML colour codes.
         //this.css("color", "green");
-        this.css("color", "#00FF00");
+        this.css("color", brightGreen);
+        console.log("Changed link colours to " + brightGreen);
 
         // Make the function chainable.
         return this;
     };
-
-    $.ltrim = function(str) {
-        return str.replace(/^\str+/, "");
-    };
-
-    $.rtrim = function(str) {
-        return str.replace(/\s+$/, "");
-    };
 }(jQuery));
-
-
-// Example of immediately-invoked function expression.
-(function () {
-    var output = "This will be logged to the browser console.";
-    console.log(output);
-})();
-
-// The output variable doesn't exist at this point.
-//console.log(output);
