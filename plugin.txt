@@ -1,0 +1,27 @@
+$("a").css("color", "red");
+
+What happens for the above JavaScript?
+Use the shorthand definition for the jQuery function, passing a selector which retrieves all anchor elements (a) in the DOM.
+The function will return a jQuery object which supports all built-in functions like css, click, each and a set of matching the selector.
+The css() function is then called on that set of objects and passed two string parameters.
+
+For a jQuery plugin to work, its functionality must also be accessible to $.fn().
+This is done by extending the $.fn() e.g. with a new function. 
+Create a function called greenify which turns links green.
+	$.fn.greenify = function() {
+		this.css("color", "green");
+	};
+
+	
+Note that "this" is used rather than "$(this)" because an object will have already been selected and is that object that the css() function is to be called on. Wrapping it in another call to jQuery is unnecessary. 
+
+Many jQuery functions can be chained together such that a number of actions are linked to one selector e.g. $("p").first().html("<span>" + text + "</span>"); gets a set of paragraph objects from the DOM, reduces the set to the first one encountered and then sets the HTML of the element to that specified by the html() call.
+To allow a function to be chained, return the object from the function once whatever desired operation has taken place. For the greenify function above, this is a case of adding "return this;" as the last line of the function.
+
+The "$" alias is a common shorthand which is not exclusive to jQuery plugins. To work with other plugins and still use "$" an immediately-invoked function expression should be used.
+This is a design pattern where an function expression is declared and immediately executed. This can be placed in a function e.g. a button click or just dropped into a .js file and it will be executed. The output variable will not be accessible outside the function. 
+
+(function () {
+    var output = "This will be logged to the browser console.";
+    console.log(output);
+})();
