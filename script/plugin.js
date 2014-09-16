@@ -10,7 +10,7 @@ $(document).ready(function () {
     });
 
     $("#btnPopup").click(function() {
-        $.fn.showPopup();
+        $.fn.showPopup("show");
     });
 });
 
@@ -31,8 +31,21 @@ $(document).ready(function () {
 }(jQuery));
 
 (function ($) {
-    $.fn.showPopup = function() {
-        alert("This is a popup.");
+    $.fn.showPopup = function (action) {
+        // Check the passed variable, logging any errors. 
+        // Note the use of the strict comparison operator '===', see http://stackoverflow.com/a/523647/
+        // Strings must be of same type and have the same sequence of characters, same 
+        // length, and same characters in corresponding positions.
+        if (action === "show") {
+            alert("This is a popup.");
+        }
+
+        if (action === undefined) {
+            console.log("No action passed.");
+        }
+        else {
+            console.log("Unsupported action '" + action + "' passed.");
+        }
     };
 }(jQuery));
 
