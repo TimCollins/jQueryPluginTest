@@ -33,7 +33,7 @@ $(document).ready(function () {
 (function ($) {
     $.fn.showPopup = function (action) {
         // Check the passed variable, logging any errors. 
-        // Note the use of the strict comparison operator '===', see http://stackoverflow.com/a/523647/
+        // Note the use of the strict comparison operator '===', see http://stackoverflow.com/a/523647/ and http://stackoverflow.com/a/359509/
         // Strings must be of same type and have the same sequence of characters, same 
         // length, and same characters in corresponding positions.
         if (action === "show") {
