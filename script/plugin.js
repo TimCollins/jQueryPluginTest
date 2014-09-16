@@ -6,7 +6,24 @@ $(document).ready(function () {
     });
 
     $("#btnGreenify").click(function () {
-        $("a").greenify().addClass("greenified");
+        // Example of chaining the output from the greenify function.
+        //$("a").greenify().addClass("greenified");
+
+        // Examples of specifying settings. Pass an anonymous object with name/value pairs
+        // that match the format of what is specified in the function.
+        // Pass just color
+        //$("a").greenify({
+        //    color: "orange"
+        //});
+
+        // Pass color and backgroundColor
+        //$("a").greenify({
+        //    color: "orange",
+        //    backgroundColor: "black"
+        //});
+
+        // Pass neither (defaults defined in the function will be used)
+        $("a").greenify();
     });
 
     $("#btnPopup").click(function() {
@@ -14,19 +31,22 @@ $(document).ready(function () {
     });
 });
 
-// Wrap the greenify function in an immediately-invoked function expression.
-// Declare a function with one parameter, "$", and pass it the jQuery function object.
 (function($) {
-    // Turn all links green when clicked.
-    $.fn.greenify = function () {
-        var brightGreen = "#00FF00";
-        // Can pass colour names as well as HTML colour codes.
-        //this.css("color", "green");
-        this.css("color", brightGreen);
-        console.log("Changed link colours to " + brightGreen);
+    $.fn.greenify = function (options) {
 
-        // Make the function chainable.
-        return this;
+        // Create an anonymous object with two properties - color and backgroundColor.
+        // Give the properties default values and use extend() to merge the function parameter
+        // called options into it.
+        var settings = $.extend({
+            color: "#00FF00",
+            backgroundColor: "white"
+        }, options);
+        
+        console.log("Changed link colour to " + settings.color);
+        return this.css({
+            color: settings.color,
+            backgroundColor: settings.backgroundColor
+        });
     };
 }(jQuery));
 
