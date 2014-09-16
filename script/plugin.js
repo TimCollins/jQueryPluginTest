@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $("#btnChangeColour").click(function () {
         // Example of chaining the output from the greenify function.
         //$("a").greenify().addClass("greenified");
@@ -35,18 +36,35 @@ $(document).ready(function () {
         // Create an anonymous object with two properties - color and backgroundColor.
         // Give the properties default values and use extend() to merge the function parameter
         // called options into it.
-        var settings = $.extend({
-            color: "#00FF00",
-            backgroundColor: "white"
-        }, options);
+        //var settings = $.extend({
+        //    color: "#00FF00",
+        //    backgroundColor: "white"
+        //}, options);
+
+        // From the Advanced Concepts page
+        // Providing public access to default settings.
+        var settings = $.extend({}, $.fn.greenify.defaults, options);
         
         console.log("Changed link colour to " + settings.color);
+
         return this.css({
             color: settings.color,
             backgroundColor: settings.backgroundColor
         });
     };
+
+    // These default values can seemingly go in a few places. Here in the function, below the 
+    // function or in document.ready().
+    $.fn.greenify.defaults = {
+        color: "red",
+        backgroundColor: "yellow"
+    };
+
 }(jQuery));
+
+// It's not clear where this setting can go. The page says it doesn't have to be in 
+// document.ready() but I can't get it to be picked up regardless.
+//$.fn.greenify.defaults.foreground = "blue";
 
 (function ($) {
     $.fn.showPopup = function (action) {
