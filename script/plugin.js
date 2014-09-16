@@ -8,6 +8,10 @@ $(document).ready(function () {
     $("#btnGreenify").click(function () {
         $("a").greenify().addClass("greenified");
     });
+
+    $("#btnPopup").click(function() {
+        $.fn.showPopup();
+    });
 });
 
 // Wrap the greenify function in an immediately-invoked function expression.
@@ -25,3 +29,10 @@ $(document).ready(function () {
         return this;
     };
 }(jQuery));
+
+(function ($) {
+    $.fn.showPopup = function() {
+        alert("This is a popup.");
+    };
+}(jQuery));
+
