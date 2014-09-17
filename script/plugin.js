@@ -24,6 +24,10 @@ $(document).ready(function () {
         //$.fn.greenify.defaults.backgroundColor = "blue";
         //$("a").greenify();
 
+        $.fn.greenify.debug = function(text) {
+            console.log("Am I able to do this? " + text);
+        };
+
         // Pass a value in the plugin call to override the defaults.
         $("a").greenify({
             backgroundColor: "orange"
@@ -57,8 +61,8 @@ $(document).ready(function () {
         // From the Advanced Concepts page
         // Providing public access to default settings.
         var settings = $.extend({}, $.fn.greenify.defaults, options);
-        
-        console.log("Changed link colour to " + settings.color);
+
+        debug(settings);
 
         return this.css({
             color: settings.color,
@@ -71,6 +75,14 @@ $(document).ready(function () {
     $.fn.greenify.defaults = {
         color: "red",
         backgroundColor: "yellow"
+    };
+
+    // Declare a private debug function.
+    function debug(obj) {
+        if (window.console && window.console.log) {
+            console.log("Changed links to background '" + obj.backgroundColor +
+                "' and foreground '" + obj.color + "'.");
+        }
     };
 
 }(jQuery));

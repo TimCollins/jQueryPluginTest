@@ -60,14 +60,52 @@ The existing functionality which allowed an anonymous object to be passed to the
 	$("a").greenify({ backgroundColor: "orange" });
 
 
+Functions that are publicly-defined can be overridden before use. It seems like functions are publicly-defined when they are part of the same namespace e.g. the two functions below can be accessed outside the block.
+(function($) {
+    $.fn.showLinkLocation = function () {
+		...
+		this.filter("a").append(function () {        
+            return $.fn.showLinkLocation.format(" (" + this.href + ")");
+        });
+		...
+    };
 
+    // Define a format function to make text bold.
+    $.fn.showLinkLocation.format = function (text) {
+        ...
+    };
+}(jQuery));
 
+By contrast, the debug method below can't be changed. It seems that it can be accessed but the default implementation can't be changed.
 
+(function($) {
+    $.fn.greenify = function (options) {
+        var settings = $.extend({}, $.fn.greenify.defaults, options);
+		...
+        debug(settings);
+		...
+    };
 
+    function debug(obj) {
+        if (window.console && window.console.log) {
+            console.log("Changed links to background '" + obj.backgroundColor +
+                "' and foreground '" + obj.color + "'.");
+        }
+    };
+
+}(jQuery));
 	
 	
-
-
+$(document).ready(function () {
+	...	
+    $("#btnChangeColour").click(function () {
+		// No error when doing this but the implementation won't be affected.		
+		$.fn.greenify.debug = function(text) {
+            console.log("Am I able to do this? " + text);
+        };
+		...
+	});
+});
 
 
 
