@@ -24,9 +24,11 @@ $(document).ready(function () {
         //$.fn.greenify.defaults.backgroundColor = "blue";
         //$("a").greenify();
 
-        $.fn.greenify.debug = function(text) {
-            console.log("Am I able to do this? " + text);
-        };
+        // Attempt to change a private function definition. Nothing should change in the 
+        // implementation.
+        //$.fn.greenify.debug = function(text) {
+        //    console.log("Am I able to do this? " + text);
+        //};
 
         // Pass a value in the plugin call to override the defaults.
         $("a").greenify({
