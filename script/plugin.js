@@ -126,12 +126,11 @@ $(document).ready(function () {
 
         this.filter("a").append(function () {
             var appendString = " (" + this.href + ")";
-            if (this.text.endsWith(appendString)) {
-                // Don't do anything
-            } else {
+            if (!this.text.endsWith(appendString)) {
                 return " (" + this.href + ")";
             }
-            
+            return "";
+
             //return $.fn.showLinkLocation.format(" (" + this.href + ")");
         });
 
