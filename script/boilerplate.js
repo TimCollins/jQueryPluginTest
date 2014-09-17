@@ -5,7 +5,8 @@
 (function($) {
     $.pluginName = function(el, options) {
         var defaults = {
-            color: "yellow",
+            originalColor: "transparent",
+            newColor: "yellow",
             onSomeEvent: function () {}
         }
 
@@ -24,10 +25,18 @@
         }
 
         // Public methods go here.
-        plugin.setBackground = function() {
-            el.css({
-                backgroundColor: defaults.color
-            });
+        plugin.setBackground = function () {
+            var actual = $(el).css("backgroundColor");
+
+            if (actual === defaults.originalColor) {
+                el.css({
+                    backgroundColor: defaults.newColor
+                });
+            } else {
+                el.css({
+                    backgroundColor: defaults.originalColor
+                });                
+            }            
         }
 
         plugin.some_public_method = function() {
