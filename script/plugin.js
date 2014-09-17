@@ -121,13 +121,18 @@ $(document).ready(function () {
         //    var linkText = " (" + link.attr("href") + ")";
 
         //    // Append the link text to the link object.
-        //    // See http://stackoverflow.com/q/280634/137001 for possible fixes to the 
-        //    // problem of repeated appends being displayed.
         //    link.append(linkText);
         //});
 
-        this.filter("a").append(function () {        
-            return $.fn.showLinkLocation.format(" (" + this.href + ")");
+        this.filter("a").append(function () {
+            var appendString = " (" + this.href + ")";
+            if (this.text.endsWith(appendString)) {
+                // Don't do anything
+            } else {
+                return " (" + this.href + ")";
+            }
+            
+            //return $.fn.showLinkLocation.format(" (" + this.href + ")");
         });
 
         // Return the object so that the method can be chained.
