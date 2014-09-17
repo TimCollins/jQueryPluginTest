@@ -66,10 +66,18 @@ $(document).ready(function () {
 
         debug(settings);
 
+        if ($(this).css("backgroundColor") === "transparent") {
+            return this.css({
+                color: settings.color,
+                backgroundColor: settings.backgroundColor
+            });
+        }
+
         return this.css({
-            color: settings.color,
-            backgroundColor: settings.backgroundColor
+            color: "#a9b995",
+            backgroundColor: "transparent"
         });
+
     };
 
     // These default values can seemingly go in a few places. Here in the function, below the 
