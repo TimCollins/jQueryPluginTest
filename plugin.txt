@@ -108,8 +108,25 @@ $(document).ready(function () {
 });
 
 
+When providing plugin options, keep things simple. Don't force people to have to think too much about how to control things and follow what the jQuery library tends to do e.g. for controlling animation speed, it might seem like a good idea to have options like "fast" and "slow" available which could be handled in code like this:
 
+var delay = 0;
 
+switch(settings.delayValue) {
+	case "fast":
+		delay = 100;
+		break;
+		
+	case "slow":
+		delay = 500;
+		break;
+	
+	default:
+		delay = 300;
+		break;
+}
+
+but this causes problems. Firstly there is a lot of extra code required to parse the value. Secondly the code will mushroom as more values are added. Thirdly, the built-in jQuery functions tend to allow values to simply be specified in milliseconds reducing the code required and allowing arbitrary values to be specified easily.
 
 
 
