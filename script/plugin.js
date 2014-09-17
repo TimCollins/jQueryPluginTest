@@ -18,7 +18,16 @@ $(document).ready(function () {
         //});
 
         // Pass neither (defaults defined in the function will be used)
-        $("a").greenify();
+        //$("a").greenify();
+
+        // Override the default background colour and then call the plugin.
+        //$.fn.greenify.defaults.backgroundColor = "blue";
+        //$("a").greenify();
+
+        // Pass a value in the plugin call to override the defaults.
+        $("a").greenify({
+            backgroundColor: "orange"
+        });
     });
 
     $("#btnLocation").click(function() {
