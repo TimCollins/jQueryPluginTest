@@ -5,8 +5,7 @@
 (function($) {
     $.pluginName = function(el, options) {
         var defaults = {
-            property: "value",
-
+            color: "yellow",
             onSomeEvent: function () {}
         }
 
@@ -25,6 +24,12 @@
         }
 
         // Public methods go here.
+        plugin.setBackground = function() {
+            el.css({
+                backgroundColor: defaults.color
+            });
+        }
+
         plugin.some_public_method = function() {
             alert("plugin.some_public_method() called.");
         }
@@ -38,6 +43,8 @@
 
 $(document).ready(function() {
     $("#btnBoilerplate").click(function() {
-        alert("btnBoilerplate clicked.");
+        var plugin = new $.pluginName($("#testDiv"));
+        console.log("Default color setting = '" + plugin.settings.color + "'.");
+        plugin.setBackground();
     });
 });
