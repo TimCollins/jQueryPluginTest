@@ -127,10 +127,9 @@ $(document).ready(function () {
         this.filter("a").append(function () {
             var appendString = " (" + this.href + ")";
 
-            if (!this.text.contains(appendString)) {
-                return $.fn.showLinkLocation.format(" (" + this.href + ")");
-            }
-            return "";
+            return this.text.contains(appendString)
+                ? ""
+                : $.fn.showLinkLocation.format(" (" + this.href + ")");
         });
 
         // Return the object so that the method can be chained.
