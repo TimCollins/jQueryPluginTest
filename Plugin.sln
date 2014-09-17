@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "script", "script", "{B4FA40AE-2B18-4855-B9E6-EE677F987F19}"
 	ProjectSection(SolutionItems) = preProject
+		script\boilerplate.js = script\boilerplate.js
 		script\html5shiv.js = script\html5shiv.js
 		script\jquery-1.11.1.min.js = script\jquery-1.11.1.min.js
 		script\jquery-1.11.1.min.map = script\jquery-1.11.1.min.map
