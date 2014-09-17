@@ -30,7 +30,11 @@ $(document).ready(function () {
         });
     });
 
-    $("#btnLocation").click(function() {
+    $("#btnLocation").click(function () {
+        // Redefine the format function to make text italicised instead.
+        $.fn.showLinkLocation.format = function (text) {
+            return "<i>" + text + "</i>";
+        };
         $("a").showLinkLocation();
     });
 
@@ -71,10 +75,6 @@ $(document).ready(function () {
 
 }(jQuery));
 
-// It's not clear where this setting can go. The page says it doesn't have to be in 
-// document.ready() but I can't get it to be picked up regardless.
-//$.fn.greenify.defaults.foreground = "blue";
-
 (function ($) {
     $.fn.showPopup = function (action) {
         // Check the passed variable, logging any errors. 
@@ -113,10 +113,15 @@ $(document).ready(function () {
         //});
 
         this.filter("a").append(function () {        
-            return " (" + this.href + ")";
+            return $.fn.showLinkLocation.format(" (" + this.href + ")");
         });
 
         // Return the object so that the method can be chained.
         return this;
+    };
+
+    // Define a format function to make text bold.
+    $.fn.showLinkLocation.format = function (text) {
+        return "<strong>" + text + "</strong>";
     };
 }(jQuery));
