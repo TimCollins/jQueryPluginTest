@@ -1,37 +1,37 @@
 $(document).ready(function () {
 
     $("#btnChangeColour").click(function () {
-        // Example of chaining the output from the greenify function.
-        //$("a").greenify().addClass("greenified");
+        // Example of chaining the output from the changeColour function.
+        //$("a").changeColour().addClass("greenified");
 
         // Examples of specifying settings. Pass an anonymous object with name/value pairs
         // that match the format of what is specified in the function.
         // Pass just color
-        //$("a").greenify({
+        //$("a").changeColour({
         //    color: "orange"
         //});
 
         // Pass color and backgroundColor
-        //$("a").greenify({
+        //$("a").changeColour({
         //    color: "orange",
         //    backgroundColor: "black"
         //});
 
         // Pass neither (defaults defined in the function will be used)
-        //$("a").greenify();
+        //$("a").changeColour();
 
         // Override the default background colour and then call the plugin.
-        //$.fn.greenify.defaults.backgroundColor = "blue";
-        //$("a").greenify();
+        //$.fn.changeColour.defaults.backgroundColor = "blue";
+        //$("a").changeColour();
 
         // Attempt to change a private function definition. Nothing should change in the 
         // implementation.
-        //$.fn.greenify.debug = function(text) {
+        //$.fn.changeColour.debug = function(text) {
         //    console.log("Am I able to do this? " + text);
         //};
 
         // Pass a value in the plugin call to override the defaults.
-        $("a").greenify({
+        $("a").changeColour({
             backgroundColor: "orange"
         });
     });
@@ -50,7 +50,7 @@ $(document).ready(function () {
 });
 
 (function($) {
-    $.fn.greenify = function (options) {
+    $.fn.changeColour = function (options) {
 
         // Create an anonymous object with two properties - color and backgroundColor.
         // Give the properties default values and use extend() to merge the function parameter
@@ -62,7 +62,7 @@ $(document).ready(function () {
 
         // From the Advanced Concepts page
         // Providing public access to default settings.
-        var settings = $.extend({}, $.fn.greenify.defaults, options);
+        var settings = $.extend({}, $.fn.changeColour.defaults, options);
 
         debug(settings);
 
@@ -74,7 +74,7 @@ $(document).ready(function () {
 
     // These default values can seemingly go in a few places. Here in the function, below the 
     // function or in document.ready().
-    $.fn.greenify.defaults = {
+    $.fn.changeColour.defaults = {
         color: "red",
         backgroundColor: "yellow"
     };
