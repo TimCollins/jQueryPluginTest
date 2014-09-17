@@ -38,9 +38,9 @@ $(document).ready(function () {
 
     $("#btnLocation").click(function () {
         // Redefine the format function to make text italicised instead.
-        $.fn.showLinkLocation.format = function (text) {
-            return "<i>" + text + "</i>";
-        };
+        //$.fn.showLinkLocation.format = function (text) {
+        //    return "<i>" + text + "</i>";
+        //};
         $("a").showLinkLocation();
     });
 
@@ -136,6 +136,14 @@ $(document).ready(function () {
 
     // Define a format function to make text bold.
     $.fn.showLinkLocation.format = function (text) {
-        return "<strong>" + text + "</strong>";
+        var output = "<strong>" + text + "</strong>";
+        debug(output);
+        return output;
+    };
+
+    function debug(obj) {
+        if (window.console && window.console.log) {
+            console.log("Added link to "+ obj + "'.");
+        }
     };
 }(jQuery));
