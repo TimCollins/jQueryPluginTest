@@ -36,10 +36,28 @@ This is the greenify function wrapped in an immediately-invoked function express
     };
 }(jQuery));
 
-It is recommended to use function parameters with plugins to reduce the chance of one plugin interfering with another. I think that if the function signatures are different then even if the function names are the same, they won't upset each other.
+It is recommended to use function parameters with plugins to reduce the chance of one plugin interfering with another. I think that if the function signatures are different then even if the function names are the same, they won't upset each other. Not sure about this.
 
-The jQuery.extend() function is used to merge the contents of two or more objects together.
+The jQuery.extend() function is used to merge the contents of two or more objects together. It can be used to provide default values for plugin settings. This code creates an anonymous object with two properties and then merges it with the named object options which has been passed to the function. The merge is done right-to left so anything specified in options will overwrite the defaults. Conversely if something is not specified in options then the default value will remain.
+	var settings = $.extend({
+		color: "#00FF00",
+		backgroundColor: "white"
+	}, options);
 
+
+It's also possible to modify the jQuery object itself by providing only one parameter to extend().
+
+
+If the settings are declared in a named object so that it's a property of the plugin then the defaults can be changed outside of the plugin itself. In that case we would end up with something like:
+	var settings = $.extend({}, $.fn.greenify.defaults, options);
+
+Here the options variable passed into the function is merged with the defaults object. The result of that merge is then merged into an empty object and the result saved to a variable called settings as above.
+
+It's possible to alter the default settings outside the plugin call then:
+	$.fn.greenify.defaults.backgroundColor = "blue";
+
+The existing functionality which allowed an anonymous object to be passed to the plugin remains unchanged:
+	$("a").greenify({ backgroundColor: "orange" });
 
 
 
