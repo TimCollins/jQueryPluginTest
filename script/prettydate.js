@@ -1,7 +1,7 @@
-function prettyDate(time) {
-	var date = new Date(time || ""),
-	  diff = (((new Date()).getTime() - date.getTime()) / 1000),
-	  day_diff = Math.floor(diff / 86400);
+function prettyDate(now, time) {
+    var date = new Date(time || "");
+    var diff = (((new Date(now)).getTime() - date.getTime()) / 1000);
+    var day_diff = Math.floor(diff / 86400);
 
 	if (isNaN(day_diff) || day_diff < 0 || day_diff >= 31)
 		return;
