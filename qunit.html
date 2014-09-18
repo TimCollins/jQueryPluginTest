@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mangled date examples</title>
+    <link rel="stylesheet" media="screen" href="css/qunit-1.15.0.css">
+    <script src="script/qUnit/qunit-1.15.0.js"></script>
+    <script src="script/prettydate.js"></script>
+    <script src="script/qunit_test.js"></script>
+    <script>
+        window.onload = function () {
+            var links = document.getElementsByTagName("a");
+            for (var i = 0; i < links.length; i++) {
+                if (links[i].title) {
+                    //var date = prettyDate(links[i].title);
+                    // Hardcode a current date to see what is supposed to happen
+                    var date = prettyDate("2014-09-17T22:24:17Z", links[i].title);
+                    if (date) {
+                        links[i].innerHTML = date;
+                    }
+                    //else {
+                    //    alert("Not a date!");
+                    //}
+                }
+            }
+
+            doTests();
+        };
+
+    </script>
+</head>
+<body>
+    <div id="qunit"></div>
+
+    <ul>
+        <li class="entry">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit orci ac sapien blandit congue.</p>
+            <small class="extra">Posted <span class="time">
+                <a href="/2013/09/blah/57/" title="2013-09-18T20:24:17Z">
+                    <span>September 18th, 2013</span>
+                </a>
+            </span>
+                by <span class="author"><a href="/tim/">Tim Collins</a></span>
+            </small>
+        </li>
+        <li class="entry">
+            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis sagittis elit sed nunc ultricies, at sollicitudin erat tempus.</p>
+            <small class="extra">Posted <span class="time">
+                <a href="/2013/09/blah/56/" title="2013-09-17T20:24:17Z">
+                    <span>September 17th, 2013</span>
+                </a>
+            </span>
+                by <span class="author"><a href="/tim/">Tim Collins</a></span>
+            </small>
+        </li>
+        <li class="entry">
+            <p>Pellentesque vulputate cursus tortor, vitae pulvinar leo vehicula efficitur. Vestibulum eleifend ipsum sed dolor bibendum congue.</p>
+            <small class="extra">Posted <span class="time">
+                <a href="/2013/09/blah/55/" title="2013-09-16T20:24:17Z">
+                    <span>September 16th, 2013</span>
+                </a>
+            </span>
+                by <span class="author"><a href="/tim/">Tim Collins</a></span>
+            </small>
+        </li>
+        <li class="entry">
+            <p>Donec vitae eros eu purus congue posuere. Nulla facilisi. Ut volutpat ipsum leo, et tempor magna facilisis fringilla.</p>
+            <small class="extra">Posted <span class="time">
+                <a href="/2013/09/blah/54/" title="2013-09-15T20:24:17Z">
+                    <span>September 15th, 2013</span>
+                </a>
+            </span>
+                by <span class="author"><a href="/tim/">Tim Collins</a></span>
+            </small>
+        </li>
+
+        <li class="entry">
+            <p>Sed rutrum, turpis placerat dapibus finibus, quam orci aliquam dolor, ut egestas dolor metus sit amet nisi. Praesent porttitor vel nibh quis dictum. Quisque et lacus vel neque condimentum tempus.</p>
+            <small class="extra">Posted <span class="time">
+                <a href="/2013/09/blah/53/" title="2013-09-14T20:24:17Z">
+                    <span>September 14th, 2013</span>
+                </a>
+            </span>
+                by <span class="author"><a href="/tim/">Tim Collins</a></span>
+            </small>
+        </li>
+
+        <li class="entry">
+            <p>Cras gravida felis in aliquam molestie. Etiam accumsan pretium mi at imperdiet. Vestibulum imperdiet viverra molestie. Morbi tincidunt pharetra dolor et placerat.</p>
+            <small class="extra">Posted <span class="time">
+                <a href="/2013/09/blah/52/" title="2013-09-13T20:24:17Z">
+                    <span>September 13th, 2013</span>
+                </a>
+            </span>
+                by <span class="author"><a href="/tim/">Tim Collins</a></span>
+            </small>
+        </li>
+    </ul>
+</body>
+</html>

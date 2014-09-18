@@ -4,6 +4,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{28651AD5-4EFD-4310-82FE-6AEEF1373A42}"
 	ProjectSection(SolutionItems) = preProject
 		index.html = index.html
+		qunit.html = qunit.html
 		style.css = style.css
 	EndProjectSection
 EndProject
@@ -13,13 +14,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "script", "script", "{B4FA40
 		script\html5shiv.js = script\html5shiv.js
 		script\jquery-1.11.1.min.js = script\jquery-1.11.1.min.js
 		script\jquery-1.11.1.min.map = script\jquery-1.11.1.min.map
+		script\manual_test.js = script\manual_test.js
 		script\plugin.js = script\plugin.js
+		script\prettydate.js = script\prettydate.js
+		script\qunit_test.js = script\qunit_test.js
 		script\util.js = script\util.js
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{5263CAC6-8A4F-442D-A75F-BE9CCE97DEE3}"
 	ProjectSection(SolutionItems) = preProject
 		css\8may2013.css = css\8may2013.css
+		css\qunit-1.15.0.css = css\qunit-1.15.0.css
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{69054EC7-D85B-4646-AB0F-09908320C4F0}"
@@ -36,6 +41,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{69054EC7-D85
 		img\noise.png = img\noise.png
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "qUnit", "qUnit", "{B23BA955-CD50-450A-9770-C4A55B447A8A}"
+	ProjectSection(SolutionItems) = preProject
+		script\qUnit\qunit-1.15.0.js = script\qUnit\qunit-1.15.0.js
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,5 +54,6 @@ Global
 		{B4FA40AE-2B18-4855-B9E6-EE677F987F19} = {28651AD5-4EFD-4310-82FE-6AEEF1373A42}
 		{5263CAC6-8A4F-442D-A75F-BE9CCE97DEE3} = {28651AD5-4EFD-4310-82FE-6AEEF1373A42}
 		{69054EC7-D85B-4646-AB0F-09908320C4F0} = {28651AD5-4EFD-4310-82FE-6AEEF1373A42}
+		{B23BA955-CD50-450A-9770-C4A55B447A8A} = {B4FA40AE-2B18-4855-B9E6-EE677F987F19}
 	EndGlobalSection
 EndGlobal
