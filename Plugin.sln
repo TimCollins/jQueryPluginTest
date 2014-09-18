@@ -14,14 +14,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "script", "script", "{B4FA40
 		script\html5shiv.js = script\html5shiv.js
 		script\jquery-1.11.1.min.js = script\jquery-1.11.1.min.js
 		script\jquery-1.11.1.min.map = script\jquery-1.11.1.min.map
+		script\manual_test.js = script\manual_test.js
 		script\plugin.js = script\plugin.js
 		script\prettydate.js = script\prettydate.js
+		script\qunit_test.js = script\qunit_test.js
 		script\util.js = script\util.js
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{5263CAC6-8A4F-442D-A75F-BE9CCE97DEE3}"
 	ProjectSection(SolutionItems) = preProject
 		css\8may2013.css = css\8may2013.css
+		css\qunit-1.15.0.css = css\qunit-1.15.0.css
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{69054EC7-D85B-4646-AB0F-09908320C4F0}"
