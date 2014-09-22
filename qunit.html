@@ -14,13 +14,10 @@
                 if (links[i].title) {
                     //var date = prettyDate(links[i].title);
                     // Hardcode a current date to see what is supposed to happen
-                    var date = prettyDate("2014-09-17T22:24:17Z", links[i].title);
+                    var date = prettyDate.format("2014-09-17T22:24:17Z", links[i].title);
                     if (date) {
                         links[i].innerHTML = date;
                     }
-                    //else {
-                    //    alert("Not a date!");
-                    //}
                 }
             }
 
@@ -31,7 +28,7 @@
 </head>
 <body>
     <div id="qunit"></div>
-
+    <div id="qunit-fixture">
     <ul>
         <li class="entry">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit orci ac sapien blandit congue.</p>
@@ -96,5 +93,6 @@
             </small>
         </li>
     </ul>
+    </div>
 </body>
 </html>

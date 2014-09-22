@@ -127,35 +127,3 @@ switch(settings.delayValue) {
 }
 
 but this causes problems. Firstly there is a lot of extra code required to parse the value. Secondly the code will mushroom as more values are added. Thirdly, the built-in jQuery functions tend to allow values to simply be specified in milliseconds reducing the code required and allowing arbitrary values to be specified easily.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
