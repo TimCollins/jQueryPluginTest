@@ -1,12 +1,6 @@
 doTests = function () {
     function getInnerText(element) {
-        var result = element.text;
-
-        if (result == undefined) {
-            result = element.innerText;
-        }
-
-        return result;
+        return (element.text === undefined ? element.innerText : element.text);
     }
 
     QUnit.test("prettyDate.format", function (assert) {
