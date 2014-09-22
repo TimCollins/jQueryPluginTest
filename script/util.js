@@ -8,6 +8,26 @@ String.prototype.contains = function(it) {
      return this.indexOf(it) != -1;
 };
 
+if (!String.prototype.trim) {
+    String.prototype.trim = function () { return this.replace(/^\s+|\s+$/g, ''); };
+
+    String.prototype.ltrim = function () { return this.replace(/^\s+/, ''); };
+
+    String.prototype.rtrim = function () { return this.replace(/\s+$/, ''); };
+
+    String.prototype.fulltrim = function () { return this.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g, '').replace(/\s+/g, ' '); };
+}
+
+function getInnerText(element) {
+    var result = element.text;
+
+    if (result == undefined) {
+        result = element.innerText;
+    }
+
+    return result;
+}
+
 function colorToHex(color) {
     if (color.substr(0, 1) === '#') {
         return color;
