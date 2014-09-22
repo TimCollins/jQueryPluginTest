@@ -18,16 +18,6 @@ if (!String.prototype.trim) {
     String.prototype.fulltrim = function () { return this.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g, '').replace(/\s+/g, ' '); };
 }
 
-function getInnerText(element) {
-    var result = element.text;
-
-    if (result == undefined) {
-        result = element.innerText;
-    }
-
-    return result;
-}
-
 function colorToHex(color) {
     if (color.substr(0, 1) === '#') {
         return color;

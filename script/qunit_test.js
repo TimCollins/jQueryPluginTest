@@ -13,7 +13,7 @@ doTests = function () {
         
         function testDate(then, expected) {
             var now = "2014-09-17T22:24:17Z";
-            assert.equal(prettyDate(now, then), expected);
+            assert.equal(prettyDate.format(now, then), expected);
 
         }
 
@@ -29,27 +29,13 @@ doTests = function () {
     QUnit.test("prettyDate.update", function(assert) {
         var links = document.getElementById("qunit-fixture").getElementsByTagName("a");
 
-        // Check if trim is supported. It seems it should be but the browsers are reporting
-        // that it isn't.
+        assert.equal(getInnerText(links[0]).trim(), "September 18th, 2013");
+        assert.equal(getInnerText(links[2]).trim(), "September 17th, 2013");
 
-        //if (!String.prototype.trim) {
-        //    alert("Use built-in trim()");
-        //} else {
-        //    alert("Use custom trim()");
-        //}
+        prettyDate.update("2013-09-18T22:24:17Z");
 
-        // Excess whitespace in this one.
-        //var inner = links[0].innerHTML;
-
-        // Works on Firefox.
-        //var inner = links[0].text.trim();
-
-        // Works on IE.
-        //var inner = links[0].innerText;
-
-        var inner = getInnerText(links[0]).trim();
-
-        assert.equal(inner, "September 18th, 2013");
+        assert.equal(getInnerText(links[0]).trim(), "2 hours ago");
+        assert.equal(links[2].innerHTML, "Yesterday");
     });
 };
 
