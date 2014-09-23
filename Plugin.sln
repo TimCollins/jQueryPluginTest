@@ -3,6 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{28651AD5-4EFD-4310-82FE-6AEEF1373A42}"
 	ProjectSection(SolutionItems) = preProject
+		closure.html = closure.html
 		index.html = index.html
 		qunit.html = qunit.html
 		qunit_env.html = qunit_env.html
@@ -12,6 +13,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "script", "script", "{B4FA40AE-2B18-4855-B9E6-EE677F987F19}"
 	ProjectSection(SolutionItems) = preProject
 		script\boilerplate.js = script\boilerplate.js
+		script\closure.js = script\closure.js
 		script\html5shiv.js = script\html5shiv.js
 		script\jquery-1.11.1.min.js = script\jquery-1.11.1.min.js
 		script\jquery-1.11.1.min.map = script\jquery-1.11.1.min.map
