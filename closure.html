@@ -38,25 +38,38 @@
         //    };
         //};
 
-        // Solution 2: 
-        // Note that this doesn't work, element is null in the first line of the function.
-        // 
-        window.onload = (function() {
+        // Solution 2: Here the onclick event keeps track of its own counter. The function
+        // bound to the onclick event is immediately executed (note the '(' before and 
+        // the ")()" after the function. The inner function that increments and resets the
+        // counter has access to the counter variable declared in the outer scope and that's 
+        // a closure. The outer-most function (window.onload) knows nothing about the 
+        // counter.
+        window.onload = function () {
             var element = document.getElementById("btnCounter");
-
-            element.onclick = function() {
+            
+            element.onclick = (function() {
                 var counter = 0;
 
-                return function(e) {
+                return function() {
                     counter++;
                     if (counter === 3) {
                         alert("Third time is the charm!");
                         counter = 0;
                     }
                 };
-            }
-        })();
-</script>
+            })();
+
+            // This reads as something like:
+            // Declare a variable called fred. Assign to it an anonymous function (wrapping brackets). 
+            // Immediately execute that anonymous function (brackets at end).
+            // In the function, declare an variable called a and assign it "Fred".
+            // Declare an inner anonymous function which calls alert and is passed the outer
+            // variable.
+
+            //var fred = (function () { var a = "Fred"; return function () { alert(a); }; })();
+            //fred();
+        };
+    </script>
     
 
     <!--[if lt IE 9]>
