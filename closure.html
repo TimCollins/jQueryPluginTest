@@ -16,22 +16,47 @@
     <script src="script/util.js"></script>
     <script src="script/closure.js"></script>
     <script type="text/javascript">
-        window.onload = function () {
-            var counter = 0;
+        // From http://jondavidjohn.com/javascript-closure-explained-using-events/
+        // Given a requirement do something on every third click of a button
+        // Solution 1: Declare a counter outside the scope of the onclick event handler.
+        // The event handler looks after incrementing and resetting the counter.
+        // This approach introduces a variable into the outer scope which is only used in 
+        // the inner scope. This might be useful if the information was used in the outer
+        // scope but in this case it's not.
+        // It would be preferable to enclose this functionality inside the event handler.
+        //window.onload = function () {
+        //    var counter = 0;
+        //    var element = document.getElementById("btnCounter");
+
+        //    element.onclick = function () {
+        //        counter++;
+
+        //        if (counter === 3) {
+        //            alert("Third time is the charm!");
+        //            counter = 0;
+        //        }
+        //    };
+        //};
+
+        // Solution 2: 
+        // Note that this doesn't work, element is null in the first line of the function.
+        // 
+        window.onload = (function() {
             var element = document.getElementById("btnCounter");
 
-            element.onclick = function () {
-                // increment outside counter
-                counter++;
+            element.onclick = function() {
+                var counter = 0;
 
-                if (counter === 3) {
-                    alert("Third time is the charm!");
-
-                    counter = 0;
-                }
-            };
-        };
-    </script>
+                return function(e) {
+                    counter++;
+                    if (counter === 3) {
+                        alert("Third time is the charm!");
+                        counter = 0;
+                    }
+                };
+            }
+        })();
+</script>
     
 
     <!--[if lt IE 9]>
