@@ -10,6 +10,15 @@
         $(document).ready(function() {
             $("#btnGetFortune").click(function () {
 
+                $.mockjax({
+                    url: "/restful/fortune",
+                    responseTime: 40,
+                    responseText: {
+                        status: "success",
+                        fortune: "Are you a turtle?"
+                    }
+                });
+
                 $.getJSON("/restful/fortune", function (response) {
                     if (response.status == "success") {
                         $("#fortune").html("Your fortune is: " + response.fortune);
