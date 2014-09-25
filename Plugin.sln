@@ -22,6 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "script", "script", "{B4FA40
 		script\manual_test.js = script\manual_test.js
 		script\plugin.js = script\plugin.js
 		script\prettydate.js = script\prettydate.js
+		script\qunit_ajax_tests.js = script\qunit_ajax_tests.js
 		script\qunit_test.js = script\qunit_test.js
 		script\qunit_tests.js = script\qunit_tests.js
 		script\util.js = script\util.js
