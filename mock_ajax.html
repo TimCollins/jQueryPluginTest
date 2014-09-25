@@ -19,11 +19,26 @@
                     }
                 });
 
+                $.mockjax({
+                    url: "/restful/fail",
+                    status: 500,
+                    responseTime: 50,
+                    responseText: "A text response from the server."
+                });
+
                 $.getJSON("/restful/fortune", function (response) {
                     if (response.status == "success") {
                         $("#fortune").html("Your fortune is: " + response.fortune);
                     } else {
                         $("#fortune").html("Things do not look good, no fortune was told");
+                    }
+                });
+
+                $.getJSON("/restful/fail", function(response) {
+                    alert("Successful responsed.");
+                }).fail(function (response) {
+                    if (response.status == 500) {
+                        alert("Error 500 received.");
                     }
                 });
             });
@@ -34,6 +49,5 @@
     <body>
         <input type="button" id="btnGetFortune" value="Get Fortune"/>
         <div id="fortune"></div>
-        <p>Stuff goes here.</p>
     </body>
 </html>
